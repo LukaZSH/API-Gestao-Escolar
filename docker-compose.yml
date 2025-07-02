@@ -1,0 +1,11 @@
+services:
+  api:
+    # Constrói a imagem a partir do Dockerfile no diretório atual.
+    build: .
+    # Mapeia a porta 8000 do host para a porta 8000 do contêiner.
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual no contêiner para desenvolvimento (live reload).
+    # Isso também garante que o banco de dados SQLite (escola.db) seja persistido no host.
+    volumes:
+      - .:/app
